@@ -1,0 +1,130 @@
+.container-w {
+    width: 908px;
+}
+body {
+    background-image: url(../img/lxe.gif);
+    background-repeat: repeat-x;
+}
+.side-nav {
+    background-image: url(../img/index_03.gif);
+    background-repeat: no-repeat;
+    background-position-x: 4px;
+    padding: 0 20px;
+}
+.side-nav ul {
+    list-style-type: none;
+    padding: 5px 10px 5px 10px;
+    margin: 0;
+    min-height: 230px;
+}
+.side-nav ul li {
+    position: relative;
+    background: url(../img/select-sv.gif) left 20px repeat-x;
+}
+.side-nav ul li.sub-active {
+    background: url(../img/select-sv.gif) left 20px repeat-x,
+        url(../img/arrow_r.gif) right 7px no-repeat;
+}
+.side-nav ul .sub-menu {
+    position: absolute;
+    background-image: url(../img/lxe.gif);
+    background-repeat: repeat-x;
+    border: white solid 2px;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 10;
+    display: none;
+    width: 180px;
+    left: 120px;
+    box-shadow: 0 0 1em rgb(156, 156, 156);
+}
+.side-nav ul .sub-active:hover .sub-menu {
+    display: block;
+}
+.side-nav ul li a {
+    background-image: url(../img/slect-ao.gif);
+    background-repeat: no-repeat;
+    background-position-y: 5px;
+    padding-left: 20px;
+    height: 25px;
+    display: block;
+    font-size: 13px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.side-nav ul li a:hover {
+    color: rgb(158, 1, 132);
+}
+.col-aside {
+    width: 25%;
+    background-color: white;
+}
+.col-content {
+    width: 75%;
+    background-color: white;
+    min-height: 500px;
+}
+.col-content .title h1 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #990000;
+    line-height: 60px;
+}
+.col-content .title {
+    background-image: url(../img/main_05.gif);
+    background-repeat: no-repeat;
+    height: 60px;
+    padding-left: 30px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.side-qu-img {
+    margin-bottom: 10px;
+}
+.side-qu-con {
+    padding: 0 10px;
+    font-size: 13px;
+}
+.main-footer {
+    background-color: rgb(230, 216, 183);
+}
+.main-footer .container-w {
+    padding: 20px;
+}
+.main-footer p,
+.container-welcome footer {
+    font-size: 13px;
+    margin: 0;
+    color: #63625e;
+}
+.col-content .container-fluid {
+    padding: 0;
+}
+.ctitle-h2 {
+    font-size: 17px;
+    color: rgb(22, 64, 190);
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 5px;
+    font-family: "微軟正黑體", "Microsoft JhengHei";
+}
+.container-welcome {
+    width: 857px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container-welcome footer {
+    padding: 0 25px;
+    text-align: center;
+}
+@media (max-width: 991px) {
+    .col-aside,
+    .container-w,
+    .col-content {
+        float: left;
+    }
+}
