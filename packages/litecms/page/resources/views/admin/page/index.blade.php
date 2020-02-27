@@ -50,7 +50,6 @@ var oTable;
 var oSearch = [];
 $(document).ready(function(){
     app.load('#page-page-entry', '{!!guard_url('page/page/0')!!}');
-    
     oTable = $('#page-page-list').dataTable( {
         'columnDefs': [{
             'targets': 0,
@@ -58,7 +57,7 @@ $(document).ready(function(){
             'orderable': false,
             'className': 'dt-body-center',
             'render': function (data, type, full, meta){
-                return '<input type="checkbox" name="id[]" id="' + data + '" value="' + data + '">';
+                return '<input type="checkbox" name="id[]" value="' + data.id + '">';
             }
         }], 
         
@@ -67,7 +66,6 @@ $(document).ready(function(){
         "bProcessing": true,
         "sDom": 'R<>rt<ilp><"clear">',
         "bServerSide": true,
-        "rowId": 'id',
         "sAjaxSource": '{!! guard_url('page/page') !!}',
         "fnServerData" : function ( sSource, aoData, fnCallback ) {
 
@@ -97,13 +95,11 @@ $(document).ready(function(){
 
     $('#page-page-list tbody').on( 'click', 'tr td:not(:first-child)', function (e) {
         e.preventDefault();
+
         oTable.$('tr.selected').removeClass('selected');
         $(this).addClass('selected');
-        var d = $('#page-page-list').DataTable().row( this ).id();
-        var ids = $(this).parent().attr("id");
-       
-        
-        $('#page-page-entry').load('{!!guard_url('page/page')!!}' + '/' + ids );
+        var d = $('#page-page-list').DataTable().row( this ).data();
+        $('#page-page-entry').load('{!!guard_url('page/page')!!}' + '/' + d.id);
     });
 
     $('#page-page-list tbody').on( 'change', "input[name^='id[]']", function (e) {

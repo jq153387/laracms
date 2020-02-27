@@ -1,10 +1,11 @@
             <div class="tab-pane disabled active row" id="details">
+
                 <div class="col-md-12 col-lg-12">
                 {!! Form::text('name')
                 -> label(trans(trans('page::page.label.name')))
                 -> placeholder(trans(trans('page::page.placeholder.name')))
                 !!}
-                
+
                 {!! Form::textarea('content')
                 -> label(trans('page::page.label.content'))
                 -> value(e($page['content']))

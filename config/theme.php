@@ -25,6 +25,10 @@ return [
             'theme'  => 'public',
             'view'   => 'public',
         ],
+        'charles'  => [
+            'theme'  => 'charles',
+            'view'   => 'charles',
+        ],
         'user'    => [
             'theme'  => 'client',
             'view'   => 'client',
