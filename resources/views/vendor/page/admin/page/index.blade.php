@@ -5,7 +5,8 @@
         <h1>
 
             <i class="fa fa-book"></i>
-             {!! trans('page::page.name') !!} <small> {!! trans('app.manage') !!} {!! trans('page::page.names') !!}</small>
+            {!! trans('page::page.name') !!} <small> {!! trans('app.manage') !!} {!! trans('page::page.names')
+                !!}</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="{!! guard_url('/') !!}"><i class="fa fa-dashboard"></i> {!! trans('app.home') !!} </a></li>
@@ -14,29 +15,31 @@
     </section>
     <!-- Main content -->
     <section class="content">
-    <div id='page-page-entry'>
-    </div>
+        <div id='page-page-entry'>
+        </div>
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-                    <li class="{!!(request('status') == '')?'active':'';!!}">
-                        <a href="{!!guard_url('page/page')!!}">{!! trans('page::page.names') !!}</a>
-                    </li>
-                    <li class="pull-right">
-                    <span class="actions">   
-                    @include('page::admin.page.partial.filter')
-                    @include('page::admin.page.partial.column')
-                    </span> 
+                <li class="{!!(request('status') == '')?'active':'';!!}">
+                    <a href="{!!guard_url('page/page')!!}">{!! trans('page::page.names') !!}</a>
+                </li>
+                <li class="pull-right">
+                    <span class="actions">
+                        @include('page::admin.page.partial.filter')
+                        @include('page::admin.page.partial.column')
+                    </span>
                 </li>
             </ul>
             <div class="tab-content">
                 <table id="page-page-list" class="table table-striped data-table">
                     <thead class="list_head">
-                    <th style="text-align: right;" width="1%"><a class="btn-reset-filter" href="#Reset" style="display:none; color:#fff;"><i class="fa fa-filter"></i></a> <input type="checkbox" id="page-page-check-all"></th>
-                    <th>{!! trans('page::page.label.name')!!}</th>
-                    <th>{!! trans('page::page.label.title')!!}</th>
-                    <th>{!! trans('page::page.label.url')!!}</th>
-                    <th>{!! trans('page::page.label.heading')!!}</th>
-                    <th>{!! trans('page::page.label.order')!!}</th>
+                        <th style="text-align: right;" width="1%"><a class="btn-reset-filter" href="#Reset"
+                                style="display:none; color:#fff;"><i class="fa fa-filter"></i></a> <input
+                                type="checkbox" id="page-page-check-all"></th>
+                        <th>{!! trans('page::page.label.name')!!}</th>
+                        <th>{!! trans('page::page.label.title')!!}</th>
+                        <th>{!! trans('page::page.label.url')!!}</th>
+                        <th>{!! trans('page::page.label.heading')!!}</th>
+                        <th>{!! trans('page::page.label.order')!!}</th>
                     </thead>
                 </table>
             </div>
@@ -45,12 +48,11 @@
 </div>
 
 <script type="text/javascript">
-
-var oTable;
+    var oTable;
 var oSearch = [];
 $(document).ready(function(){
     app.load('#page-page-entry', '{!!guard_url('page/page/0')!!}');
-    
+   
     oTable = $('#page-page-list').dataTable( {
         'columnDefs': [{
             'targets': 0,
@@ -103,7 +105,15 @@ $(document).ready(function(){
         var ids = $(this).parent().attr("id");
        
         
-        $('#page-page-entry').load('{!!guard_url('page/page')!!}' + '/' + ids );
+        $('#page-page-entry').load('{!!guard_url('page/page')!!}' + '/' + ids ,function(){
+            // $(document).on(function(){
+            //     console.log('dddd');
+                console.log('dddd');
+                
+            //     $(".dropdown-toggle").dropdown();
+            // })
+        });
+        
     });
 
     $('#page-page-list tbody').on( 'change', "input[name^='id[]']", function (e) {
@@ -154,4 +164,12 @@ $(document).ready(function(){
     });
 
 });
+$(document).on('change','#name',function(){
+    // console.log('dfsdfsd');
+    // if($('#meta_title').val()==""||$('#meta_title').val()==$(this).val()){
+    //     console.log("add");
+    //     $('#meta_title').val($(this).val());
+    // }
+    
+})
 </script>

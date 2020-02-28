@@ -1,3 +1,3 @@
 <section class="title">
-  <h1>{{$page->heading}}</h1>
+  <h1>{{$page->title}}</h1>
 </section>

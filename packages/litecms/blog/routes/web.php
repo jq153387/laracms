@@ -12,7 +12,7 @@ Route::get('category/{slug?}', 'CategoryPublicController@show');
 
 
 // Resource routes  for blog
-Route::group(['prefix' => set_route_guard('web').'/blog'], function () {
+Route::group(['prefix' => '{guard}/blog'], function () {
     Route::get('publish/{id?}/{data}', 'BlogResourceController@publish');
     Route::resource('blog', 'BlogResourceController');
 });

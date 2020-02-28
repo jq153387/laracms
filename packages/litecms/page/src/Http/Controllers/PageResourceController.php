@@ -88,6 +88,7 @@ class PageResourceController extends BaseController
     {
 
         $page = $this->repository->newInstance([]);
+
         return $this->response->setMetaTitle(trans('app.new') . ' ' . trans('page::page.name')) 
             ->view('page::page.create', true) 
             ->data(compact('page'))
@@ -104,11 +105,12 @@ class PageResourceController extends BaseController
     public function store(PageRequest $request)
     {
         try {
+            //print_r($request->all());
             $attributes              = $request->all();
             $attributes['user_id']   = user_id();
             $attributes['user_type'] = user_type();
             $page                 = $this->repository->create($attributes);
-
+            //print_r($page);
             return $this->response->message(trans('messages.success.created', ['Module' => trans('page::page.name')]))
                 ->code(204)
                 ->status('success')

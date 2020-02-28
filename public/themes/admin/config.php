@@ -64,8 +64,8 @@ return [
             $theme->asset()->usePath()->add('app', 'dist/css/app.css');
             $theme->asset()->usePath()->add('jquery', 'dist/js/jquery.min.js');
 
-            $theme->asset()->container('footer')->usepath()->add('manifest', 'dist/js/manifest.js');
-            $theme->asset()->container('footer')->usepath()->add('vendor', 'dist/js/vendor.js');
+            // $theme->asset()->container('footer')->usepath()->add('manifest', 'dist/js/manifest.js');
+            // $theme->asset()->container('footer')->usepath()->add('vendor', 'dist/js/vendor.js');
             $theme->asset()->container('footer')->usepath()->add('app', 'dist/js/app.js');
             $theme->asset()->container('footer')->usepath()->add('main', 'js/main.js');
         },

@@ -36,6 +36,9 @@ class ResourceController extends BaseController
     public function home(Request $request)
     {
         $user = $request->user()->toArray();
+        // print_r($request->user());
+        // print_r($user);
+        // print_r(compact('user'));
         return $this->response->setMetaTitle(__('app.dashboard'))
             ->view('home')
             ->data(compact('user'))
