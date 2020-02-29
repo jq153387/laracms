@@ -25,7 +25,7 @@
                 <li class="pull-right">
                     <span class="actions">
                         @include('page::admin.page.partial.filter')
-                        @include('page::admin.page.partial.column')
+                        {{-- @include('page::admin.page.partial.column') --}}
                     </span>
                 </li>
             </ul>
@@ -36,9 +36,8 @@
                                 style="display:none; color:#fff;"><i class="fa fa-filter"></i></a> <input
                                 type="checkbox" id="page-page-check-all"></th>
                         <th>{!! trans('page::page.label.name')!!}</th>
-                        <th>{!! trans('page::page.label.title')!!}</th>
                         <th>{!! trans('page::page.label.url')!!}</th>
-                        <th>{!! trans('page::page.label.heading')!!}</th>
+                        <th>{!! trans('page::page.label.status')!!}</th>
                         <th>{!! trans('page::page.label.order')!!}</th>
                     </thead>
                 </table>
@@ -89,9 +88,8 @@ $(document).ready(function(){
         "columns": [
             {data :'id'},
             {data :'name'},
-            {data :'title'},
             {data :'url'},
-            {data :'heading'},
+            {data :'status'},
             {data :'order'},
         ],
         "pageLength": 25
@@ -106,12 +104,8 @@ $(document).ready(function(){
        
         
         $('#page-page-entry').load('{!!guard_url('page/page')!!}' + '/' + ids ,function(){
-            // $(document).on(function(){
-            //     console.log('dddd');
-                console.log('dddd');
-                
-            //     $(".dropdown-toggle").dropdown();
-            // })
+            //console.log('dddd');
+            
         });
         
     });
@@ -164,12 +158,11 @@ $(document).ready(function(){
     });
 
 });
-$(document).on('change','#name',function(){
-    // console.log('dfsdfsd');
-    // if($('#meta_title').val()==""||$('#meta_title').val()==$(this).val()){
-    //     console.log("add");
-    //     $('#meta_title').val($(this).val());
-    // }
-    
-})
+// $(document).on('change','#name',function(){
+//     // console.log('dfsdfsd');
+//     // if($('#meta_title').val()==""||$('#meta_title').val()==$(this).val()){
+//     //     console.log("add");
+//     //     $('#meta_title').val($(this).val());
+//     // }
+// })
 </script>

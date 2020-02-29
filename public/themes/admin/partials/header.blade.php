@@ -2,9 +2,15 @@
     <!-- Logo -->
     <a href="{{ Trans::to('admin') }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><img src="{!!theme_asset('img/logo/logo-white.svg')!!}" alt=""></span>
+        <span class="logo-mini" style="color:white; font-weight:bold;">
+            查理大學第一醫學院
+            {{-- <img src="{!!theme_asset('img/logo/logo-white.svg')!!}" alt=""> --}}
+        </span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><img src="{!!theme_asset('img/logo/logo-big-white.svg')!!}" alt=""></span>
+        <span class="logo-lg" style="color:white; font-weight:bold;">
+            查理大學第一醫學院
+            {{-- <img src="{!!theme_asset('img/logo/logo-big-white.png')!!}" alt=""> --}}
+        </span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -15,7 +21,7 @@
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                <!-- Messages: style can be found in dropdown.less-->
+                {{-- <!-- Messages: style can be found in dropdown.less-->
                 <li class="dropdown messages-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-envelope-o"></i>
@@ -56,7 +62,7 @@
                         </li>
                         <li class="footer"><a href="#">View all</a></li>
                     </ul>
-                </li>
+                </li> --}}
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -86,7 +92,9 @@
                 </li>
                 <!-- Control Sidebar Toggle Button -->
                 <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    <a href="/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+
+                    {{-- <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a> --}}
                 </li>
             </ul>
         </div>

@@ -2,7 +2,7 @@
     <i aria-hidden="true" class="fa fa-columns">
     </i>
     <span class="hidden-sm hidden-xs">
-        Columns
+        欄位
     </span>
 </button>
 <div class="modal fade" id="modal-manage-column">
@@ -11,10 +11,10 @@
             <div class="modal-header">
                 <button aria-hidden="true" class="close" data-dismiss="modal" type="button">
                     <i class="fa fa-times-circle">
-            </i>
+                    </i>
                 </button>
                 <h4 class="modal-title">
-                    Manage Columns
+                    管理欄位
                 </h4>
             </div>
             <div class="modal-body clearfix">
@@ -37,17 +37,17 @@
                 <button class="btn btn-success" id="save_columns_settings" type="button">
                     <i class="fa fa-check-circle aria-hidden=" true""="">
                     </i>
-                    Save
+                    儲存
                 </button>
                 <button class="btn btn-primary" id="btn-reset-column" type="button">
                     <i aria-hidden="true" class="fa fa-refresh">
                     </i>
-                    Reset
+                    重置
                 </button>
                 <button class="btn btn-default" data-dismiss="modal" type="button">
                     <i aria-hidden="true" class="fa fa-times-circle">
                     </i>
-                    Close
+                    取消
                 </button>
             </div>
         </div>

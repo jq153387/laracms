@@ -33,7 +33,7 @@ class PublicController extends Controller
         return $this->response
             ->setMetaKeyword(strip_tags($page->meta_keyword))
             ->setMetaDescription(strip_tags($page->meta_description))
-            ->setMetaTitle(strip_tags($page->meta_title))
+            ->setMetaTitle(strip_tags($page->title))
             ->layout('home')
             ->view('home')
             ->data(compact('page'))
@@ -46,7 +46,7 @@ class PublicController extends Controller
         return $this->response
             ->setMetaKeyword(strip_tags($page->meta_keyword))
             ->setMetaDescription(strip_tags($page->meta_description))
-            ->setMetaTitle(strip_tags($page->meta_title))
+            ->setMetaTitle(strip_tags($page->title))
             ->layout('default')
             ->view('index')
             ->data(compact('page'))

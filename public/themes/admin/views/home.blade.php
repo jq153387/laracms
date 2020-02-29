@@ -3,7 +3,7 @@
         <h1>
             <i class="fa fa-dashboard"></i>
             {!!trans('app.dashboard')!!}
-            <small>{!!trans('app.version')!!}</small>
+            {{-- <small>{!!trans('app.version')!!}</small> --}}
         </h1>
         <ol class="breadcrumb">
             <li><a href="{!!guard_url('/')!!}"><i class="fa fa-dashboard"></i> {!!trans('app.home')!!}</a></li>
@@ -11,6 +11,13 @@
         </ol>
     </section>
     <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                歡迎來到您的網站內容管理系統。
+            </div>
+        </div>
+    </section>
+    {{-- <section class="content">
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <a href="#">
@@ -148,5 +155,5 @@
 
 
         </div>
-    </section>
+    </section> --}}
 </div>

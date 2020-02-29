@@ -1,9 +1,6 @@
 <div class="tab-pane disabled active row" id="details">
     <div class="col-md-8 col-lg-8">
-        {{-- {!! Form::text('title')
-        -> label(trans('page::page.label.title'))
-        -> placeholder(trans('page::page.placeholder.title'))
-        !!} --}}
+
         {!! Form::text('name')
         -> label(trans(trans('page::page.label.name')))
         -> required()
@@ -29,23 +26,39 @@
 </div>
 <div class="tab-pane disabled row" id="metatags">
     <div class="col-md-6 col-lg-6">
-
+        {!! Form::select('category_id')
+        -> options(trans('page::page.options.category'))
+        -> label(trans('page::page.label.category_id'))
+        -> placeholder(trans('page::page.placeholder.category_id'))
+        !!}
+        {!! Form::select('status')
+        -> options(trans('page::page.options.status'))
+        -> label(trans('page::page.label.status'))
+        -> placeholder(trans('page::page.placeholder.status'))
+        !!}
+        {!! Form::range('order')
+        -> label(trans('page::page.label.order'))
+        -> placeholder(trans('page::page.placeholder.order'))
+        !!}
         {{-- {!! Form::text('heading')
-                    -> label(trans('page::page.label.heading'))
-                    -> placeholder(trans('page::page.placeholder.heading'))
-                    !!}
-                    {!! Form::text('sub_heading')
-                    -> label(trans('page::page.label.sub_heading'))
-                    -> placeholder(trans('page::page.placeholder.sub_heading'))
-                    !!} --}}
-        {!! Form::text('meta_title')
+        -> label(trans('page::page.label.heading'))
+        -> placeholder(trans('page::page.placeholder.heading'))
+        !!}
+        {!! Form::text('sub_heading')
+        -> label(trans('page::page.label.sub_heading'))
+        -> placeholder(trans('page::page.placeholder.sub_heading'))
+        !!} --}}
+        {{-- {!! Form::text('meta_title')
         -> label(trans('page::page.label.meta_title'))
         -> placeholder(trans('page::page.placeholder.meta_title'))
-        !!}
-
+        !!} --}}
     </div>
 
     <div class="col-md-6 col-lg-6">
+        {!! Form::text('title')
+        -> label(trans('page::page.label.meta_title'))
+        -> placeholder(trans('page::page.placeholder.title'))
+        !!}
         {!! Form::text('meta_keyword')
         -> label(trans('page::page.label.meta_keyword'))
         -> placeholder(trans('page::page.placeholder.meta_keyword'))
@@ -55,30 +68,23 @@
         -> rows(3)
         -> placeholder(trans('page::page.placeholder.meta_description'))
         !!}
-        {!! Form::textarea('abstract')
+        {{-- {!! Form::textarea('abstract')
         -> label(trans('page::page.label.abstract'))
         -> rows(3)
         -> placeholder(trans('page::page.placeholder.abstract'))
-        !!}
+        !!} --}}
     </div>
 </div>
-<div class="tab-pane disabled row" id="settings">
+{{-- <div class="tab-pane disabled row" id="settings">
     <div class="col-md-6 ">
-        {!! Form::range('order')
-        -> label(trans('page::page.label.order'))
-        -> placeholder(trans('page::page.placeholder.order'))
-        !!}
-
-        {{-- 
-
         {!! Form::select('view')
         -> options(trans('page::page.options.view'))
         -> label(trans('page::page.label.view'))
         -> placeholder(trans('page::page.placeholder.view'))
-        !!} --}}
+        !!}
     </div>
     <div class='col-md-6'>
-        {{-- {!! Form::hidden('compile')
+        {!! Form::hidden('compile')
         -> forceValue('0')
         !!}
 
@@ -86,33 +92,23 @@
         -> options(trans('page::page.options.compile'))
         -> label(trans('page::page.label.compile'))
         -> placeholder(trans('page::page.placeholder.compile'))
-        !!} --}}
-
-        {!! Form::select('category_id')
-        -> options(trans('page::page.options.category'))
-        -> label(trans('page::page.label.category_id'))
-        -> placeholder(trans('page::page.placeholder.category_id'))
         !!}
 
-        {!! Form::select('status')
-        -> options(trans('page::page.options.status'))
-        -> label(trans('page::page.label.status'))
-        -> placeholder(trans('page::page.placeholder.status'))
-        !!}
+
     </div>
-</div>
-@if ($mode == 'create')
+</div> --}}
+{{-- @if ($mode == 'create')
 <div class="tab-pane row" id="images">
     <div class="form-group">
         <label for="images" class="control-label col-lg-12 col-sm-12 text-left">
             {{trans('page::page.label.images') }}
-        </label>
-        <div class='col-lg-6 col-sm-12'>
-            {!! $page->files('images')
-            ->url($page->getUploadUrl('images'))
-            ->uploader()!!}
-        </div>
-    </div>
+</label>
+<div class='col-lg-6 col-sm-12'>
+    {!! $page->files('images')
+    ->url($page->getUploadUrl('images'))
+    ->uploader()!!}
+</div>
+</div>
 </div>
 @elseif ($mode == 'edit')
 <div class="tab-pane row" id="images">
@@ -137,4 +133,4 @@
         {!! $page->files('images') !!}
     </div>
 </div>
-@endif
+@endif --}}

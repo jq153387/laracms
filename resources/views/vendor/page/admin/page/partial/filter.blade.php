@@ -2,7 +2,7 @@
     <button class="btn btn-xs btn-danger btn-search" type="button">
         <i aria-hidden="true" class="fa fa-search">
         </i>
-        <span class="hidden-sm hidden-xs"> Search</span>
+        <span class="hidden-sm hidden-xs"> 搜尋</span>
     </button>
     <button aria-expanded="false" class="btn btn-xs btn-danger dropdown-toggle" data-toggle="dropdown" type="button">
         <span class="caret">
@@ -16,32 +16,17 @@
             <a class="btn-search" style="cursor:pointer;">
                 <i aria-hidden="true" class="fa fa-fw fa-filter">
                 </i>
-                Show filters
+                開啟搜尋
             </a>
         </li>
         <li>
             <a class="btn-reset-filter" style="cursor:pointer;">
                 <i class="fa fa-fw fa-ban text-danger">
                 </i>
-                Clear filters
+                取消搜尋
             </a>
         </li>
-        <li class="divider">
-        </li>
-        <li>
-            <a class="btn-save" style="cursor:pointer;">
-                <i aria-hidden="true" class="fa fa-fw fa-floppy-o">
-                </i>
-                Save search
-            </a>
-        </li>
-        <li>
-            <a class="btn-open" style="cursor:pointer;">
-                <i aria-hidden="true" class="fa fa-fw fa-folder-open-o">
-                </i>
-                Saved searches
-            </a>
-        </li>
+
     </ul>
 </div>
 
@@ -49,120 +34,122 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #dd4b39; color: #fff;">
-              <button type="button" class="close" data-dismiss="modal" aaria-hidden="true">&times;</button>
-              <h4 class="modal-title">Advance Search</h4>
+                <button type="button" class="close" data-dismiss="modal" aaria-hidden="true">&times;</button>
+                <h4 class="modal-title">進階搜尋</h4>
             </div>
-              {!!Form::horizontal_open()
-              ->id('form-search')
-              ->method('POST')
-              ->action(guard_url('settings/settings'))!!}
-                <div class="modal-body has-form clearfix">
-                    <div class="modal-form">
-                      <form class="form-horizontal" role="form">
+            {!!Form::horizontal_open()
+            ->id('form-search')
+            ->method('POST')
+            ->action(guard_url('settings/settings'))!!}
+            <div class="modal-body has-form clearfix">
+                <div class="modal-form">
+                    <form class="form-horizontal" role="form">
                         <div class="container-fluid">
                             <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                     
-                                    <label for="search[name]" class="col-sm-2 control-label">
-                                        {!! trans('page::page.label.name')!!}
-                                    </label>
-                                    <div class="col-sm-10">
-                                        {!! Form::text('search[name]')->raw()!!}
+                                <div class="col-md-6">
+                                    <div class="form-group">
+
+                                        <label for="search[name]" class="col-sm-2 control-label">
+                                            {!! trans('page::page.label.name')!!}
+                                        </label>
+                                        <div class="col-sm-10">
+                                            {!! Form::text('search[name]')->raw()!!}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                     
-                                    <label for="search[title]" class="col-sm-2 control-label">
-                                        {!! trans('page::page.label.title')!!}
-                                    </label>
-                                    <div class="col-sm-10">
-                                        {!! Form::text('search[title]')->raw()!!}
+                                <div class="col-md-6">
+                                    <div class="form-group">
+
+                                        <label for="search[slug]" class="col-sm-2 control-label">
+                                            {!! trans('page::page.label.url')!!}
+                                        </label>
+                                        <div class="col-sm-10">
+                                            {!! Form::text('search[slug]')->raw()!!}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                     
-                                    <label for="search[compile]" class="col-sm-2 control-label">
-                                        {!! trans('page::page.label.compile')!!}
-                                    </label>
-                                    <div class="col-sm-10">
-                                        {!! Form::text('search[compile]')->raw()!!}
+                                {{-- <div class="col-md-6">
+                                    <div class="form-group">
+
+                                        <label for="search[compile]" class="col-sm-2 control-label">
+                                            {!! trans('page::page.label.compile')!!}
+                                        </label>
+                                        <div class="col-sm-10">
+                                            {!! Form::text('search[compile]')->raw()!!}
+                                        </div>
+                                    </div>
+                                </div> --}}
+                                <div class="col-md-6">
+                                    <div class="form-group">
+
+                                        <label for="search[order]" class="col-sm-2 control-label">
+                                            {!! trans('page::page.label.order')!!}
+                                        </label>
+                                        <div class="col-sm-10">
+                                            {!! Form::text('search[order]')->raw()!!}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                     
-                                    <label for="search[order]" class="col-sm-2 control-label">
-                                        {!! trans('page::page.label.order')!!}
-                                    </label>
-                                    <div class="col-sm-10">
-                                        {!! Form::text('search[order]')->raw()!!}
+                                <div class="col-md-6">
+                                    <div class="form-group">
+
+                                        <label for="search[status]" class="col-sm-2 control-label">
+                                            {!! trans('page::page.label.status')!!}
+                                        </label>
+                                        <div class="col-sm-10">
+                                            {!! Form::text('search[status]')->raw()!!}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                     
-                                    <label for="search[status]" class="col-sm-2 control-label">
-                                        {!! trans('page::page.label.status')!!}
-                                    </label>
-                                    <div class="col-sm-10">
-                                        {!! Form::text('search[status]')->raw()!!}
-                                    </div>
-                                </div>
-                            </div>
                             </div>
                         </div>
-                    </div>
                 </div>
-                <div class="modal-footer">
-                    <div class="col-md-12 col-lg-12">
-                        <button aria-label="Close" class="btn pull-right btn-danger" data-dismiss="modal" type="button">
-                            <i class="fa fa-times-circle">
-                            </i>
-                            Close
-                        </button>
-                        <button class="btn btn-success pull-right " id="btn-apply-search" name="new" style="margin-right:1%" type="button">
-                            <i class="fa fa-check-circle">
-                            </i>
-                            Search
-                        </button>
-                    </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-12 col-lg-12">
+                    <button aria-label="Close" class="btn pull-right btn-danger" data-dismiss="modal" type="button">
+                        <i class="fa fa-times-circle">
+                        </i>
+                        取消
+                    </button>
+                    <button class="btn btn-success pull-right " id="btn-apply-search" name="new" style="margin-right:1%"
+                        type="button">
+                        <i class="fa fa-check-circle">
+                        </i>
+                        搜尋
+                    </button>
                 </div>
-              {!!Form::close()!!}
+            </div>
+            {!!Form::close()!!}
         </div>
     </div>
 </div>
 
 
 <div class="modal fade" id="modal-open">
-  <div class="modal-dialog">
-    <div class="modal-content" style="max-width:400px;">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Saved Searches</h4>
-      </div>
-      <div class="modal-body" style="height:210px; overflow-y: auto;">
-        
-        <div id="saved-list">
-          
-        </div>
+    <div class="modal-dialog">
+        <div class="modal-content" style="max-width:400px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Saved Searches</h4>
+            </div>
+            <div class="modal-body" style="height:210px; overflow-y: auto;">
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger"  name="Closerep" data-dismiss="modal"><i class="fa fa-times-circle"></i> Close </button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
+                <div id="saved-list">
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" name="Closerep" data-dismiss="modal"><i
+                        class="fa fa-times-circle"></i> Close </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
 <script type="text/javascript">
-$(document).ready(function(){
+    $(document).ready(function(){
 
     $(".page-page .btn-open").click(function(){
         toastr.info('This feature will be enabled soon.', 'Coming soon');

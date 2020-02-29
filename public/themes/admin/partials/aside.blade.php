@@ -9,8 +9,8 @@
             </div>
             <div class="pull-left info">
                 <p>{!!user()->name!!}</p>
-                <a href="{!!guard_url('profile')!!}"><i class="fa fa-user  text-success"></i> Profile</a>
-                <a href="{!!guard_url('logout')!!}"><i class="fa fa-power-off text-warning"></i> Logout</a>
+                <a href="{!!guard_url('profile')!!}"><i class="fa fa-user  text-success"></i> 個人檔案</a>
+                <a href="{!!guard_url('logout')!!}"><i class="fa fa-power-off text-warning"></i> 登出</a>
             </div>
         </div>
         <!-- search form -->
@@ -19,7 +19,7 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu tree" data-widget="tree">
-            <li class="header">MAIN NAVIGATION</li>
+            {{-- <li class="header">MAIN NAVIGATION</li> --}}
             {!!Menu::menu('admin', 'menu::menu.admin')!!}
             {{-- <li class="header">Masters</li>
             <li><a href="{{ guard_url('settings') }}"><i class="fa fa-sliders text-red"></i> <span>Settings</span></a>
