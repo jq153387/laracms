@@ -2,11 +2,13 @@
 
 <div class="login-box">
     <div class="logo">
-        <a href="{!! guard_url('/') !!}">
-            查理大學第一醫學院
-            <img src="{!!theme_asset('img/logo/logo.svg')!!}" class="img-responsive center-block" alt="logo"
-                title="Lavalite">
-        </a>
+        <h2 style="text-align:center;">
+            <a href="{!! guard_url('/') !!}" style="color:white;">
+                查理大學第一醫學院
+                {{-- <img src="{!!theme_asset('img/logo/logo.svg')!!}" class="img-responsive center-block" alt="logo"
+                title="Lavalite"> --}}
+            </a>
+        </h2>
     </div>
     <div class="body">
         <h2>登入你的帳號</h2>

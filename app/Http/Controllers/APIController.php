@@ -18,6 +18,7 @@ class APIController extends BaseController
     public function __construct(Request $request = null)
     {
         $guard = request()->guard;
+        //print_r($guard);
         guard($guard . '.api');
         $this->middleware('auth:' . $guard . '.api');
         $this->middleware('role:' . $guard);
@@ -31,6 +32,10 @@ class APIController extends BaseController
     public function home(Request $request)
     {
         return $request->user();
+    }
+    public function home2()
+    {
+        return '$request->user()';
     }
 
 }

@@ -3,9 +3,19 @@
 Route::prefix('{guard}/page')->group(function () {
     Route::resource('page', 'PageResourceController');
 });
-// Public routes for pages
+// Public routes for pages by category default
 Route::get('/{slug}.html', 'PagePublicController@getPage');
+// public routes for pages by category news
+Route::get('/news/{slug}.html', 'PagePublicController@getPageNews');
+Route::get('/news', 'PagePublicController@getNewsList');
 
+
+// Route::get('/test', function(){
+//     return Litecms\Page\Models\Page::all();
+// });
+// Route::get('/test', function(){
+//     return App\Page::all();
+// });
 if (Trans::isMultilingual()) {
     Route::group(
         [

@@ -13,6 +13,7 @@
 
 Route::get('/', 'PublicController@home');
 Route::get('/home', 'PublicController@index');
+//Route::get('/news', 'PublicController@news');
 
 Route::prefix('{guard}')->name('guard.')->group(function () {
     Auth::routes(['verify' => true]);

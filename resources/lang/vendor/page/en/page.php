@@ -6,8 +6,8 @@ return [
     'options'     => [
         'view' => ['default' => 'Default', 'left' => 'Left Menu', 'right' => 'Right Menu'],
         'compile' => ['0' => 'No', '1' => 'Yes'],
-        'status' => ['0' => 'Hide', '1' => 'Show'],
-        'category' => ['default' => 'Default'],
+        'status' => ['Hide' => 'Hide', 'Show' => 'Show'],
+        'category' => ['default' => 'Default','news'=>'News'],
     ],
     'label'       => [
         'name'             => 'Name',
@@ -25,14 +25,13 @@ return [
         'view'             => 'View',
         'order'            => 'Order',
         'status'           => 'Status',
-        'status'           => 'Status',
         'keyword'          => 'Keyword',
         'description'      => 'Description',
         'slug'             => 'Slug',
         'url'              => 'Url',
         'created_at'       => 'Created at',
         'updated_at'       => 'Updated at',
-        'category_id'      => 'Category',
+        'category'      => 'Category',
     ],
     'placeholder' => [
         'name'             => 'Please enter name',
@@ -54,7 +53,7 @@ return [
         'keyword'          => 'Please enter keyword',
         'description'      => 'Please enter description',
         'slug'             => 'Please enter slug',
-        'category_id'      => 'Please enter category',
+        'category'      => 'Please enter category',
     ],
 
     /**

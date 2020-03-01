@@ -23,6 +23,7 @@ class PageShowTransformer extends TransformerAbstract
             'banner' => $page->banner,
             'images' => $page->images,
             'view' => $page->view,
+            'category'   => $page->category,
             'compiler' => $page->compiler,
             'status' => $page->status,
             'upload_folder' => $page->upload_folder,

@@ -37,4 +37,33 @@ class PageRepository extends BaseRepository implements PageRepositoryInterface
     {
         return $this->findBySlug($var);
     }
+    /**
+     * Get paginate page
+     *
+     * @return void
+     */
+    public function getPaginate($number)
+    {
+        return $this->paginate($limit = $number, $columns = ['*'])->where('status','=','Show');
+    }
+    /**
+     * Get Simple Limit page tabel data by news.
+     *
+     * @return void
+     */
+    public function getSimpleLimit($number,$id,$sort)
+    {
+        return $this->model->where('category','=','news')->where('status','=','Show')->orderBy('order','ASC')->orderBy('id','DESC')->limit($number)->get();
+    }
+    /**
+     * Get page all tabel data by news.
+     *
+     * @return void
+     */
+    public function getListAll()
+    {
+        return $this->model->where('category','=','news')->where('status','=','Show')->orderBy('order','ASC')->orderBy('id','DESC')->get();
+    }
+    
+    
 }

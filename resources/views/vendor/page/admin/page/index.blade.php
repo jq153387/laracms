@@ -37,6 +37,7 @@
                                 type="checkbox" id="page-page-check-all"></th>
                         <th>{!! trans('page::page.label.name')!!}</th>
                         <th>{!! trans('page::page.label.url')!!}</th>
+                        <th>{!! trans('page::page.label.category')!!}</th>
                         <th>{!! trans('page::page.label.status')!!}</th>
                         <th>{!! trans('page::page.label.order')!!}</th>
                     </thead>
@@ -76,6 +77,7 @@ $(document).ready(function(){
                 aoData.push( { 'name' : key, 'value' : val } );
             });
             app.dataTable(aoData);
+            
             $.ajax({
                 'dataType'  : 'json',
                 'data'      : aoData,
@@ -89,7 +91,19 @@ $(document).ready(function(){
             {data :'id'},
             {data :'name'},
             {data :'url'},
-            {data :'status'},
+            {
+                data :'category',
+                render : function (data, type, row, meta) { 
+                            //row指的是資料列物件 data變數相等於row.sysid
+                            return (data=='default')?"頁面":"最新消息";
+                        }
+            },
+            {data :'status',
+            render : function (data, type, row, meta) { 
+                            //row指的是資料列物件 data變數相等於row.sysid
+                            return (data=='Hide')?"停止發佈":"發佈的";
+                        }
+            },
             {data :'order'},
         ],
         "pageLength": 25

@@ -60,7 +60,7 @@ return [
             'dates' => ['deleted_at', 'createdat', 'updated_at'],
             'appends' => [],
             'fillable' => ['id', 'parent_id', 'type', 'name', 'code', 'amount', 'abbr',
-                'description', 'icon', 'image', 'images', 'files', 'extras',
+                'description', 'icon', 'image', 'images', 'files', 'extras','category',
                 'slug', 'order', 'status', 'created_at', 'updated_at', 'deleted_at'],
             'translatables' => [],
             'upload_folder' => 'master/master',

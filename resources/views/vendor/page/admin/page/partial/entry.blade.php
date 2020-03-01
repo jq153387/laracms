@@ -24,11 +24,11 @@
         !!}
     </div>
 </div>
-<div class="tab-pane disabled row" id="metatags">
+<div class="tab-pane disabled row" id="settings">
     <div class="col-md-6 col-lg-6">
-        {!! Form::select('category_id')
+        {!! Form::select('category')
         -> options(trans('page::page.options.category'))
-        -> label(trans('page::page.label.category_id'))
+        -> label(trans('page::page.label.category'))
         -> placeholder(trans('page::page.placeholder.category_id'))
         !!}
         {!! Form::select('status')
@@ -75,7 +75,7 @@
         !!} --}}
     </div>
 </div>
-{{-- <div class="tab-pane disabled row" id="settings">
+{{-- <div class="tab-pane disabled row" id="metatags">
     <div class="col-md-6 ">
         {!! Form::select('view')
         -> options(trans('page::page.options.view'))

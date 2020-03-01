@@ -154,7 +154,9 @@ class PageResourceController extends BaseController
     {
         try {
             $attributes = $request->all();
-
+            //print_r($attributes);
+            //print_r($page);
+            // print_r($attributes);
             $page->update($attributes);
             return $this->response->message(trans('messages.success.updated', ['Module' => trans('page::page.name')]))
                 ->code(204)

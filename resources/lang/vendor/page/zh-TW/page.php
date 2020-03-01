@@ -6,8 +6,8 @@ return [
     'options'     => [
         'view' => ['default' => 'Default', 'left' => 'Left Menu', 'right' => 'Right Menu'],
         'compile' => ['0' => 'No', '1' => 'Yes'],
-        'status' => ['0' => 'Hide', '1' => 'Show'],
-        'category' => ['default' => 'Default'],
+        'status' => ['Hide' => '停止發佈', 'Show' => '發佈的'],
+        'category' => ['default' => '頁面','news' => '最新消息'],
     ],
     'label'       => [
         'name'             => '標題',
@@ -25,14 +25,13 @@ return [
         'view'             => 'View',
         'order'            => '排序',
         'status'           => '狀態',
-        'status'           => '狀態',
         'keyword'          => 'Keyword',
         'description'      => 'Description',
         'slug'             => '網址後綴',
-        'url'              => 'Url',
+        'url'              => '網址後綴',
         'created_at'       => 'Created at',
         'updated_at'       => 'Updated at',
-        'category_id'      => '分類',
+        'category'          => '分類',
     ],
     'placeholder' => [
         'name'             => '請輸入你的標題',
@@ -54,7 +53,7 @@ return [
         'keyword'          => 'Please enter keyword',
         'description'      => 'Please enter description',
         'slug'             => '請輸入你的網址後綴',
-        'category_id'      => 'Please enter category',
+        'category   '      => '請選擇分類',
     ],
 
     /**

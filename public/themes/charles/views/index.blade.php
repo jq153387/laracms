@@ -1,15 +1,20 @@
 <div>
     <section class="title_news">
         <div class="title">
-            <h1>最新消息<a href="#" class="more-btn-link" style="margin-top:20px"></a></h1>
+            <h1>最新消息<a href="{{trans_url('/news')}}" class="more-btn-link" style="margin-top:20px"></a></h1>
         </div>
+
+        {{-- {!!$page->content!!} --}}
         <ul>
-            <li><a href="#">最新消息tttttttttttttsadtsdt</a></li>
-            <li><a href="#">最新消息tttttttttttttsadtsdt</a></li>
-            <li><a href="#">最新消息tttttttttttttsadtsdt</a></li>
-            <li><a href="#">最新消息tttttttttttttsadtsdt</a></li>
-            <li><a href="#">最新消息tttttttttttttsadtsdt</a></li>
+            @for ($i = 0; $i < count($page); $i++) <li><a
+                    href="{{trans_url('/news/'.$page[$i]->slug.'.html')}}">{{ $page[$i]->title }}</a>
+                <span style="float: right;display: block;">{{subStr($page[$i]->created_at,0,10)}}</span>
+                </li>
+
+
+                @endfor
         </ul>
+
     </section>
     <section class="title_hot">
         <a href="#" class="link-titls">查理大學第一醫學院 Q&A</a>
