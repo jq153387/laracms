@@ -16,6 +16,6 @@ return [
     */
 
     'previous' => '&laquo; 先前',
-    'next'     => '下个 &raquo;',
+    'next'     => '下個 &raquo;',
 
 ];

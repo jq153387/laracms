@@ -75,17 +75,17 @@
                             <img src="{!!user()->picture!!}" class="img-circle" alt="User Image" />
                             <p>
                                 {!!user()->name!!} - {!!user()->designation!!}
-                                <small>Member since {!!user()->joined!!}</small>
+                                <small>Hello!!</small>
                             </p>
                         </li>
 
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="{{ guard_url('profile') }}" class="btn btn-theme">Profile</a>
+                                <a href="{{ guard_url('profile') }}" class="btn btn-theme">個人檔案</a>
                             </div>
                             <div class="pull-right">
-                                <a href="{{ guard_url('logout') }}" class="btn btn-theme">Sign out</a>
+                                <a href="{{ guard_url('logout') }}" class="btn btn-theme">登出</a>
                             </div>
                         </li>
                     </ul>

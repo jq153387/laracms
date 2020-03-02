@@ -40,6 +40,7 @@
                         <th>{!! trans('page::page.label.category')!!}</th>
                         <th>{!! trans('page::page.label.status')!!}</th>
                         <th>{!! trans('page::page.label.order')!!}</th>
+                        <th>{!! trans('page::page.label.created_at')!!}</th>
                     </thead>
                 </table>
             </div>
@@ -63,7 +64,9 @@ $(document).ready(function(){
                 return '<input type="checkbox" name="id[]" id="' + data + '" value="' + data + '">';
             }
         }], 
-        
+        "language": {
+                "url": "/js/datatable_tw.json"
+        },
         "responsive" : true,
         "order": [[1, 'asc']],
         "bProcessing": true,
@@ -105,6 +108,12 @@ $(document).ready(function(){
                         }
             },
             {data :'order'},
+           {
+            data :'created_at',
+            render: function(data, type, row, meta){
+              return (data!=null)?data.substr(0,10):data;
+            }
+          }
         ],
         "pageLength": 25
     });

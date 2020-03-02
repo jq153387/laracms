@@ -4,7 +4,7 @@
             <div class="col-md-6">
                 <p><b>查理大學第一醫學院</b> Charles University-1st Faculty of Medicine</p>
                 <p><b>台灣招生辦公室</b> Taiwan Representative Office</p>
-                <p><b>查大學網址</b>：<a href="http://www.1f.cuni.cz" target="_blank">http://www.1f.cuni.cz</p>
+                <p><b>查大學網址</b>：<a href="http://www.1fl.cuni.cz" target="_blank">http://www.1fl.cuni.cz</p>
             </div>
             <div class="col-md-6">
                 <p><b>10552 台北市北寧路66-1號5樓</b></p>

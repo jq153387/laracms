@@ -35,7 +35,8 @@ body {
     z-index: 10;
     display: none;
     width: 180px;
-    left: 120px;
+    left: 80px;
+    top: 20px;
     box-shadow: 0 0 1em rgb(156, 156, 156);
 }
 .side-nav ul .sub-active:hover .sub-menu {
@@ -77,6 +78,7 @@ body {
     background-repeat: no-repeat;
     height: 60px;
     padding-left: 25px;
+    margin-bottom: 10px;
 }
 img {
     max-width: 100%;
@@ -197,6 +199,7 @@ img {
     padding: 0;
     margin: 0;
     list-style-type: none;
+    min-height: 100px;
 }
 .title_news ul li {
     line-height: 25px;
@@ -218,9 +221,25 @@ img {
 .title_news {
     margin-bottom: 20px;
 }
+.title_news .title {
+    margin: 0;
+}
+div.dataTables_wrapper div.dataTables_filter label {
+    text-align: right !important;
+}
+.content ul li,
+.content ol li {
+    margin-bottom: 10px;
+}
+.content .nav-tabs li {
+    margin-bottom: 0;
+}
+
+#page-page-list_wrapper .col-sm-12 {
+    min-height: 300px;
+}
 @media (max-width: 991px) {
     .col-aside,
-    .container-w,
     .col-content {
         float: left;
     }

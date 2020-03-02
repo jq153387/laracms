@@ -14,22 +14,22 @@ return [
      */
 
     'success'       => [
-        'created' => ':Module 已成功添加。',
-        'updated' => ':Module 已成功更新。',
-        'deleted' => ':Module 已成功删除。',
-        'changed' => ':Module 已被 :status。',
+        'created' => ':Module 已成功添加。 ',
+        'updated' => ':Module 已成功更新。 ',
+        'deleted' => ':Module 已成功刪除。 ',
+        'changed' => ':Module 已被 :status。 ',
     ],
 
     'error'         => [
-        'create' => '无法创建 :Module 。',
-        'update' => '无法更新 :Module 。',
-        'delete' => '无法删除 :Module 。',
+        'create' => '無法創建 :Module 。',
+        'update' => '無法更新 :Module 。',
+        'delete' => '無法删除 :Module 。',
     ],
 
-    'unprocessable' => '无法处理的请求。',
-    'areyousure'    => '是否确定？',
+    'unprocessable' => '無法處理的請求。',
+    'areyousure'    => '是否確定？',
     'type'          => [
         'success' => '成功',
-        'error'   => '错误',
+        'error'   => '錯誤',
     ],
 ];

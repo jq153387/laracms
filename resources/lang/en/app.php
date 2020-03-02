@@ -9,7 +9,7 @@ return [
     |
      */
 
-    'name'           => 'Lavalite',
+    'name'           => '查理大學第一醫學院',
     'name.html'      => '<b>Lava</b>lite',
     'name.short'     => '<b>L</b>l',
     'admin.panel'    => 'Admin Panel',

@@ -12,7 +12,7 @@ class PageShowTransformer extends TransformerAbstract
         return [
             'id'      => $page->eid,
             'slug' => $page->slug,
-            'url' => $page->slug.'.html',
+            'url' => $page->slug . '.html',
             'name'   => $page->name,
             'heading'   => $page->heading,
             'title'   => $page->title,
