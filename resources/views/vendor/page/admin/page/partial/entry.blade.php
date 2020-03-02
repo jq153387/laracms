@@ -29,7 +29,7 @@
         {!! Form::select('category')
         -> options(trans('page::page.options.category'))
         -> label(trans('page::page.label.category'))
-        -> placeholder(trans('page::page.placeholder.category_id'))
+        -> placeholder(trans('page::page.placeholder.category'))
         !!}
         {!! Form::select('status')
         -> options(trans('page::page.options.status'))
@@ -57,7 +57,7 @@
     <div class="col-md-6 col-lg-6">
         {!! Form::text('title')
         -> label(trans('page::page.label.meta_title'))
-        -> placeholder(trans('page::page.placeholder.title'))
+        -> placeholder(trans('page::page.placeholder.meta_title'))
         !!}
         {!! Form::text('meta_keyword')
         -> label(trans('page::page.label.meta_keyword'))

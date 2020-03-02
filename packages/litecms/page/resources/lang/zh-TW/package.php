@@ -12,6 +12,6 @@ return [
     |
     */
 
-    'name'  => 'Page',
-    'names' => 'Pages',
+    'name'  => '內容',
+    'names' => '文章',
 ];

@@ -7,7 +7,7 @@ return [
         'view' => ['default' => 'Default', 'left' => 'Left Menu', 'right' => 'Right Menu'],
         'compile' => ['0' => 'No', '1' => 'Yes'],
         'status' => ['Hide' => 'Hide', 'Show' => 'Show'],
-        'category' => ['default' => 'Default','news'=>'News'],
+        'category' => ['news' => 'News', 'default' => 'Default'],
     ],
     'label'       => [
         'name'             => 'Name',
