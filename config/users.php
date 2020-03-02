@@ -33,14 +33,15 @@ return [
         'model' => [
             'model' => \App\User::class,
             'table' => 'users',
+
             'presenter' => \Litepie\User\Repositories\Presenter\UserPresenter::class,
-            'hidden' => ['status', 'email_verified_at', 'user_id', 'user_type', 'created_at', 'updated_at', 'password', 'deleted_at', 'remember_token', 'upload_folder', 'id'],
+            'hidden' => [],
             'visible' => [],
             'guarded' => ['*'],
             'slugs' => [],
             'dates' => ['created_at', 'updated_at', 'deleted_at', 'dob'],
             'appends' => ['picture'],
-            'fillable' => ['user_id', 'name', 'email', 'parent_id', 'password', 'api_token', 'remember_token', 'sex', 'dob', 'designation', 'mobile', 'phone', 'address', 'street', 'city', 'district', 'state', 'country', 'photo', 'web', 'permissions'],
+            'fillable' => ['user_id', 'name', 'email', 'parent_id', 'password', 'api_token', 'remember_token', 'sex', 'dob', 'designation', 'mobile', 'phone', 'address', 'street', 'city', 'district', 'state', 'country', 'photo', 'web', 'permissions', 'email_verified_at'],
             'translate' => [],
 
             'upload_folder' => 'user/user',
@@ -137,15 +138,13 @@ return [
             'count' => 1,
             'type'  => 'file',
             ],
-             */
-            ],
+             */],
 
             'casts' => [
                 /*
             'images'    => 'array',
             'file'      => 'array',
-             */
-            ],
+             */],
 
             'revision' => [],
             'perPage' => '20',
