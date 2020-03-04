@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="col-xs-6 text-right">
-                <a href="{{guard_url("password/reset")}}"> 忘記密碼?</a>
+                {{-- <a href="{{guard_url("password/reset")}}"> 忘記密碼?</a> --}}
             </div>
         </div>
         <button type="submit" class="btn theme-btn btn-block mt-20">登入</button>

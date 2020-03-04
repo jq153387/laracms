@@ -89,8 +89,8 @@ class PageResourceController extends BaseController
 
         $page = $this->repository->newInstance([]);
 
-        return $this->response->setMetaTitle(trans('app.new') . ' ' . trans('page::page.name')) 
-            ->view('page::page.create', true) 
+        return $this->response->setMetaTitle(trans('app.new') . ' ' . trans('page::page.name'))
+            ->view('page::page.create', true)
             ->data(compact('page'))
             ->output();
     }
@@ -123,7 +123,6 @@ class PageResourceController extends BaseController
                 ->url(guard_url('page/page'))
                 ->redirect();
         }
-
     }
 
     /**
@@ -141,22 +140,12 @@ class PageResourceController extends BaseController
             ->data(compact('page'))
             ->output();
     }
-
-    /**
-     * Update the page.
-     *
-     * @param Request $request
-     * @param Model   $page
-     *
-     * @return Response
-     */
-    public function update(PageRequest $request, Page $page)
+    public function update_delete(PageRequest $request, Page $page)
     {
         try {
+
             $attributes = $request->all();
-            //print_r($attributes);
-            //print_r($page);
-            // print_r($attributes);
+            $attributes['delete_at'] = date('Y-m-d H:s:i');
             $page->update($attributes);
             return $this->response->message(trans('messages.success.updated', ['Module' => trans('page::page.name')]))
                 ->code(204)
@@ -170,7 +159,34 @@ class PageResourceController extends BaseController
                 ->url(guard_url('page/page/' . $page->getRouteKey()))
                 ->redirect();
         }
+    }
+    /**
+     * Update the page.
+     *
+     * @param Request $request
+     * @param Model   $page
+     *
+     * @return Response
+     */
+    public function update(PageRequest $request, Page $page)
+    {
+        try {
 
+            $attributes = $request->all();
+
+            $page->update($attributes);
+            return $this->response->message(trans('messages.success.updated', ['Module' => trans('page::page.name')]))
+                ->code(204)
+                ->status('success')
+                ->url(guard_url('page/page/' . $page->getRouteKey()))
+                ->redirect();
+        } catch (Exception $e) {
+            return $this->response->message($e->getMessage())
+                ->code(400)
+                ->status('error')
+                ->url(guard_url('page/page/' . $page->getRouteKey()))
+                ->redirect();
+        }
     }
 
     /**
@@ -190,7 +206,6 @@ class PageResourceController extends BaseController
                 ->status('success')
                 ->url(guard_url('page/page/0'))
                 ->redirect();
-
         } catch (Exception $e) {
 
             return $this->response->message($e->getMessage())
@@ -199,7 +214,6 @@ class PageResourceController extends BaseController
                 ->url(guard_url('page/page/' . $page->getRouteKey()))
                 ->redirect();
         }
-
     }
 
     /**
@@ -225,7 +239,6 @@ class PageResourceController extends BaseController
                 ->code(202)
                 ->url(guard_url('page/page'))
                 ->redirect();
-
         } catch (Exception $e) {
 
             return $this->response->message($e->getMessage())
@@ -234,7 +247,6 @@ class PageResourceController extends BaseController
                 ->url(guard_url('page/page'))
                 ->redirect();
         }
-
     }
 
     /**
@@ -255,7 +267,6 @@ class PageResourceController extends BaseController
                 ->code(202)
                 ->url(guard_url('page/page'))
                 ->redirect();
-
         } catch (Exception $e) {
 
             return $this->response->message($e->getMessage())
@@ -264,7 +275,5 @@ class PageResourceController extends BaseController
                 ->url(guard_url('page/page/'))
                 ->redirect();
         }
-
     }
-
 }

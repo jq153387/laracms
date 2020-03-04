@@ -36,7 +36,7 @@ class PageAPIController extends BaseController
      */
     public function index(PageRequest $request)
     {
-        
+
         return $this->repository
             ->setPresenter(\Litecms\Page\Repositories\Presenter\PageListPresenter::class)
             ->paginate();

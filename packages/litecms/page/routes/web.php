@@ -2,6 +2,7 @@
 // Guard routes for pages
 Route::prefix('{guard}/page')->group(function () {
     Route::resource('page', 'PageResourceController');
+    Route::get('/dest', 'PageResourceController@update');
 });
 // Public routes for pages by category default
 Route::get('/{slug}.html', 'PagePublicController@getPage');
